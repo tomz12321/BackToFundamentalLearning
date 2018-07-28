@@ -1,0 +1,57 @@
+<html>
+
+	<head>
+	</head>
+
+	<body>
+		<script>
+			document.write("Hello World!");
+		</script>
+	</body>
+
+</html>
+
+const mapDispatchToProps = dispatch => {
+	return {
+		onTodoClick: id => {
+			dispatch(toggleTod(id))
+		}
+	}
+}
+
+//使用 connect() 創建 VisibleTodoList, 並傳入這兩個函數
+
+import { connect } from 'react-redux'
+
+const VisibleTodoList = connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(TodoList)
+
+export default VisibleTodoList
+
+==
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+        alert("This is an alert box!");
+        </script>
+    </body>    
+</html>
+==
+
+= src tag =
+<html>
+ <head>
+ 	<title></title>
+ 	<script src="demo.js"></script>
+ </head>
+ <body>
+ </body>
+
+ =demo.js=
+ alert("This is an alert box!");
+</html>
