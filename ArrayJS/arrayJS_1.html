@@ -1,0 +1,36 @@
+<html>
+	<head>
+
+	<head>
+
+	<body>
+		<div>
+			<table>
+				<tr>
+					<td><label> Input: </label></td>
+					<td><input type="number" name="plaintext" id="plaintext" value="2" required min=0 max=2></td>
+				</tr>
+
+				<tr>
+					<td><label> Result: </label></td>
+					<td><p id=resulttext></p></td>
+				</tr>
+			</table>
+			<button onclick = "calResult(plaintext.value)"> Submit </button>
+		</div>
+
+		<script type="text/javascript">
+			function calResult(index){
+				var arr = ['a','b','c'];
+				//arr = new Array('a','b','c')
+
+				var resultOutput = arr[index];
+				//console.log(resultOutput);
+
+				document.getElementById("resulttext").innerHTML = resultOutput;
+
+			}
+
+		</script>
+	</body>
+</html>
