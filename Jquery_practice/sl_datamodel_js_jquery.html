@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<!-- 有data model觀念的JavaScript/jQuery寫法 -->
+
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+	
+<body>
+
+<ul id='todo-list'></ul>
+<script>
+	var todos = [
+	{text: 'Exercise.'},
+	{text: 'Learn JavaScript.'},
+	{text: 'Write a blog.'},
+	];
+
+	function renderTodoList(){
+		$('#todo-list').empty();
+
+		todos.map(function(el){
+			$('#todo-list').append(new $('<li>' + el.text + '</li>'))
+		})
+	}
+
+	renderTodoList();
+
+//然後在button元件或是li元件的onclick事件裡面操作todos陣列，就算是操作data model了。
+//此外，記得在所有關於data model的操作內呼叫renderTodoList函式。
+</script>
+
+<button id='clear' onclick='clearAllTodo()'>Clear all</button>
+
+<script>
+
+	function clearAllTodo(){
+		todos = [];
+
+		renderTodoList();
+	}
+
+	//像這樣任何操作都從data model出發，最後再render的作法，可以讓data model跟UI元件保持某種對應關係，讓程式碼更好維護。
+	//有經驗的前端工程師，光靠這種技巧，再搭配Handlebars之類的模板系統，就可以寫出十分漂亮的程式碼。
+
+</script>
+
+</body>
+</html>
