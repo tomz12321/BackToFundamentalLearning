@@ -1,0 +1,107 @@
+= Vanilla JS  is a fast, lightweight, cross-platform framework = <br/>
+for building incredible, powerful JavaScript applications. <br/>
+
+<h1>Introduction</h1>
+
+The VanillaJS team maintains every byte of code in the framework and works hard each day to make <br/>
+sure it is small and intuitive. Who's using Vanilla JS? Glad you asked! Here are a few: <br/>
+
+Facebook Google YouTube Yahoo Wikipedia Windows Live Twitter Amazon LinkedIn MSN <br/>
+eBay Microsoft Tumblr Apple Pinterest PayPal Reddit Netfix Stack Overflow <br/>
+
+In fact, Vanilla JS is already used on more websites than jQuery, Prototype JS, MooTools, YUI, and <br/>
+Google Web Toolkit - combined. <br/>
+
+<h1>Download</h1> <br/>
+
+<h1>Testimonials</h1> <br/>
+
+<h1>Getting Started</h1> <br/>
+
+<script src="path/to/vanilla.js"></script>
+
+<h1>Spead Comparison</h1> <br/>
+
+<table>
+<tr>
+VanillaJS / document.getElementById('test-table');<br/>
+</tr>
+<tr>
+Dojo / dojo.byId('test-table');<br/>
+</tr>
+<tr>
+PrototypeJS / $('test-table')<br/>
+</tr>
+<tr>
+Ext JS / delete Ext.elCache['test-table']; Ext.get('test-table');<br/>
+</tr>
+<tr>
+jQuery / $jq('#test-table');<br/>
+</tr>
+<tr>
+YUI / YAHOO.util.Dom.get('test-table');<br/>
+</tr>
+<tr>
+MooTools / document.id('test-table')<br/>
+</tr>
+</table>
+
+<h1>Code Examples</h1>
+
+<h2>Fade an element out and then remove it</h2>
+
+<h3>VanillaJS</h3>
+
+var s = document.getElementById('thing').style;<br/>
+s.opacity = 1;<br/>
+(function fade(){(s.opacity-=.1)<0?s.display="none":setTimeout(fade,40)})(); 
+
+<br/>
+
+<h3>jQuery</h3>
+
+sample code
+<label>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>
+$('#thing').fadeOut();
+</script>
+</label>
+
+<h2>Make an AJAX call</h2>
+
+<h3>VanillaJS</h3>
+
+var r = new XMLHttpRequest();<br/>
+r.open("POST","path/to/api", true);<br/>
+r.onreadystate hange = function (){<br/>
+	if (r.readyState != 4 || r.status != 200) return;<br/>
+	alert("Success: " + r.responseText)<br/>
+};<br/>
+r.send("banana=yellow");<br/>
+
+<h3>jQuery</h3>
+
+sample code
+<label>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>
+$.ajax({
+	type: 'POST',
+	url: "path/to/api",
+	data: "banana=yellow",
+	success: function (data) {
+		alert("Sucess: " + data);
+	},
+});
+</script>
+</label>
+
+<h1>Futher Reading</h1>
+
+<h1>For more information about Vanilla JS:</h1>
+
+check out the Vanilla JS documentation <br/>
+read some books on Vanilla JS <br/>
+or try out one of the many Vanilla JS plugins. <br/>
+When powering your applications with Vanilla JS, feel free to use this handy button! <img src="vjsbutton.png">
