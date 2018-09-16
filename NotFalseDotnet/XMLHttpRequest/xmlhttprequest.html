@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title> XMLHttpRequest — JavaScript 發送 HTTP 請求 (I) </title>
+</head>
+<body>
+
+<h2>一、實例物件</h2>
+首先，以 建構元 實例一個 XMLHttpRequest 物件:<br/>
+
+<script type="text/javascript">
+var xhr = new XMLHttpRequest();
+</script>
+
+<h2>二、設定請求</h2>
+使用 open() 方法，設定請求，<br/>
+請求方法除了 GET 與 POST，還能使用 PUT、DELETE、HEAD、OPTIONS！<br/>
+並且預設使用了 非同步(async) 的方式接收回應:<br/>
+
+<script type="text/javascript">
+/*
+ * {string} 請求方法 (method)
+ * {string} 目標 url
+ * {boolean} 非同步 [async] -- 可選
+ * {string} 使用者 [user] -- 可選
+ * {string} 密碼 [password] -- 可選
+ */
+ xhr.open("GET","https://gank.io/api/random/data/福利/20");
+</script>
+
+非同步/異步 是指執行任務(e.g., 請求)卡住了不會傻傻地等，<br/>
+而是先繼續做其他事，等回應或失敗了，再來處理後續事宜。<br/>
+<br/>
+無論是何種 HTTP Client ，預設幾乎都是 非同步。<br/>
+才不會造成瀏覽器 為等待 Server 回應，阻斷(block)執行，而造成 卡死。<br/>
+
+<h2>三、請求表頭</h2>
+
+再來可以透過 setRequestHead() 方法，設置請求訊息的表頭欄位，<br/>
+基於安全考量，這些表頭欄位: Forbidden_header_name 是禁止添加的喔，<br/>
+會由 使用者代理(e.g., 瀏覽器) 幫你搞定！<br/>
+
+<h2>四、監聽事件</h2>
+使用 非同步，需監聽 load 事件，<br/>
+讓回應完成時能執行相對應的函式- 回調函式(callback):<br/>
+
+<script type="text/javascript">
+	// 非同步取得回應
+	xhr.onload = function(){
+		//...
+		//...處理回應...
+		//...
+	};
+</script>
+
+<h2>五、發送請求</h2>
+一切準備就緒後，就送出請求啦！<br/>
+send 方法中的參數，是請求訊息的酬載(payload)內容，<br/>
+由於此次使用的是 GET 方法，不得送出酬載，因此設為空值:<br/>
+
+<script type="text/javascript">
+	xhr.send(null);
+</script>
+
+<h2>六、處理回應</h2>
+剛剛的 監聽事件，尚未說明如何處理回應。<br/>
+<br/>
+回應的文字 text，能透過 responseText 屬性取得，<br/>
+若 Server 回應的是 XML 或 XHTML，則使用 responseXML 屬性，<br/>
+若回應的是常見的 JSON，則可以使用 JSON.parse()方法，解析 responseText屬性。<br/>
+<script type="text/javascript">
+// 取得回應的 Content-Type 表頭欄位
+// 以決定如何處理回應
+var type = xhr.getResponseHeader("Content-Type");
+
+// 建構元 (strategy, response)
+var handler;
+
+// 使用簡易的 正規表達式，判斷媒體類型
+if (type.match(/^application\/json/)){
+	handler = new Handler(jsonHandler, JSON.parse(xhr.responseText));	
+} else if (type.match(/^application\/xml/)) {
+	handler = new Handler(textHandler, xhr.responseXML);
+} else {
+	handler = new Handler(textHandler, xhr.responseText);	
+}
+
+handler.handleResponse();
+
+</script>
+
+這裡為求簡潔省略 回應狀態碼 的判斷，<br/>
+實務中必不能省！<br/>
+
+可透過簡單的小於、等於，<br/>
+
+判斷是2xx的成功、3xx的重新導向 或 4xx 客戶端錯誤...:<br/>
+
+<script type="text/javascript">
+	//if (200 <= xhr.status && xhr.status <= 299)
+</script>
+
+也可以裝逼點，將回應狀態碼 除以100，
+再用地板函數(floor)將小數點去掉:
+
+<script type="text/javascript">
+	if(Math.floor(xhr.status / 100) == 2){
+		//...成功...
+	} else {
+		//...其他...
+	}
+</script>
+
+<h2>七、輸出結果</h2>
+
+最後，隨便寫一個 DOM 操作，<br/>
+將回應的 URI，置於 img 的 src 屬性，即可享用勝利的果實:<br/>
+
+<script type="text/javascript">
+	
+	// 簡易處理 JSON 回應
+function jsonHandler(response) {
+    let data = response.results;
+    // 建立緩衝的文件片段 docFrag
+    let docFrag = document.createDocumentFragment();
+	
+    for (var i = 0, l = data.length; i < l; i++) {
+        var url = data[i].url;
+        var img = document.createElement("img");
+        img.src = url;
+        img.width = 300;
+        // 將 img 添加至 docFrag
+        docFrag.appendChild(img);
+    }
+    // 將含有多個 img 的 docFrag
+    // 一次新增至 HTML 的 body 中
+    document.body.appendChild(docFrag);
+}
+
+</script>
+
+</body>
+
+</html>
