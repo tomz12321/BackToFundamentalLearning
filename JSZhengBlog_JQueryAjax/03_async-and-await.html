@@ -14,18 +14,18 @@
 
 	async function test() {
 		console.log("測試 1. 拉人成功:");
-		let test = await 你聽過安利嗎(true);
+		let test = await haveUHeardAmway(true);
 		console.log("Result: " + test);
 
 		console.log("-----------------\n");
 
 		console.log("測試 2. 拉人失敗:");
-		test = await 你聽過安利嗎(false);
+		test = await haveUHeardAmway(false);
 		console.log("Result: " + test);
 	}
 
 
-function 你聽過安利嗎(flag) {
+function haveUHeardAmway(flag) {
 	return new Promise(function (resolve, reject) {
 
 		var value = "一起年薪百萬啦 !";
