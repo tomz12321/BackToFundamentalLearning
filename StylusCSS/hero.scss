@@ -1,0 +1,115 @@
+# CSS needs a hero
+
+body {
+	font: 12px Helvetica, Arial, sans-serif;
+}
+a.button {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+# What if we could omit braces?
+body
+	font: 12px Helvetica, Arial, sans-serif;
+
+a.button
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius 5px;
+
+# How about semi-colons?
+body
+	font: 12px Helvetica, Arial, sans-serif
+
+a.button
+	-webkit-border-radius: 5px
+	-moz-border-radius: 5px
+	border-radius: 5px
+
+# Keep things DRY
+border-radius()
+	-webkit-border-radius: arguments
+	-moz-border-radius: arguments
+
+body
+	font: 12px Helvetica, Arial, sans-serif
+
+a.button
+	border-radius(5px)
+
+# How about transparent mixins?
+border-radius()
+	-webkit-border-radius: arguments
+	-moz-border-radius: arguments
+	border-radius: arguments
+
+body
+	font: 12px Helvetica, Arial, sans-serif
+
+a.button
+	border-radius: 5px
+
+# Create and Share
+@import 'vendor'
+
+body
+	font: 12px Helvetica, Arial, sans-serif
+a.button
+	border-radius: 5px
+
+# Even in-language functions!
+sum(nums...)
+	sum = 0
+	sum += n for n in nums
+
+sum(1 2 3 4)
+// => 10
+
+# What if it were all optional?
+fonts = Helvetica, Arial, sans-serif
+
+body {
+	padding: 50px;
+	font: 14px/1.4 fonts;
+}
+
+# Get styling with Stylus
+Installing Stylus is very easy once you have Node.js. So get the binaries for your
+platform and make sure that they also include npm, Node's package manager.
+
+Now, type in your terminal:
+
+$ npm install stylus -g
+
+If you want an expressive css language for nodejs with these features or the features
+listed below, head over to Github for more information.
+http://github.com/stylus/stylus
+
+# Features
+<li> Optional colons </li>
+<li> Optional semi-colons </li>
+<li> Optional commas </li>
+<li> Optional braces </li>
+<li> Variables </li>
+<li> Interpolation </li>
+<li> Mixins </li>
+<li> Arithmetic </li>
+<li> Type coercion </li>
+<li> Conditionals </li>
+<li> Iteration </li>
+<li> Nested selectors </li>
+<li> Parent referencing </li>
+<li> Varialbe function calls </li>
+<li> Lexical scoping </li>
+<li> Built-in functions (over 60) </li>
+<li> In-language functions </li>
+<li> Optional compression </li>
+<li> Optional image inlining </li>
+<li> Stylus executable </li>
+<li> Robust error reporting </li>
+<li> Single-line and multi-line comments </li>
+<li> CSS literal for those tricky times </li>
+<li> Character escaping </li>
+<li> TextMate bundle </li>
+<li> and more! </li>
