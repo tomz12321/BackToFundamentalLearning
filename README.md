@@ -12,3 +12,4 @@ Practice for programming fundamentals
 - Web development
 - Android App
 - Data Structure and Algorithm
+- Learn and use machine learning (TensorFlow core)
