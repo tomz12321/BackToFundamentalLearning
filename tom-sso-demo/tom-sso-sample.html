@@ -1,0 +1,46 @@
+<!--script code sample by Tom-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Authing sample programming demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #authing__retry {
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<script src="https://cdn.jsdelivr.net/npm/authing-js-sdk@2.3.0/dist/authing-js-sdk-browser.min.js"></script>
+<script>
+    // initialise Authing SDK for Web
+    const auth = new Authing({
+        clientId: '5a9fa26cf8635a000185528c',
+        timestamp: Math.round(new Date() / 1000),
+        nonce: Math.ceil(Math.random() * Math.pow(10, 6))
+    });
+    auth.then(function(authing) {
+        // Call the small program scan code login method, this method will generate a picture for scanning code login and related prompt information
+
+        authing.startWXAppScaning({
+            // do not auto redirect
+            redirect: false,
+  
+            // scan onSuccess
+            onSuccess(userInfo) {
+                alert('Scan login Successfully! Please go to console for user message ')
+                console.log(userInfo);
+                
+                // save Token into localStorage
+                localStorage.setItem('token', userInfo.token);
+            }
+        });
+    })
+</script>
+
+</body>
+</html>
