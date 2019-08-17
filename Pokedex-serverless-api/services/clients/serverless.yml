@@ -1,0 +1,163 @@
+# NOTE: update this with your service name
+service: fww-crm-api-clients
+
+# Use the serverless-webpack plugin to transpile ES6
+plugins:
+  - serverless-webpack
+  - serverless-offline
+  #- serverless-domain-manager
+
+# serverless-webpack configuration
+# Enable auto-packing of external modules
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+  secrets: ${file(secrets.json)}
+  # customDomain:
+  #   domainName: 'crm-api.forexworldwide.com' # Change this to your domain.
+  #   basePath: 'clients' # This will be prefixed to all routes
+  #   stage: ${self:provider.stage}
+  #   createRoute53Record: true
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${self:custom.secrets.NODE_ENV}
+  region: us-east-1
+  versionFunctions: false
+
+  profile: uni
+
+  environment:
+    NODE_ENV: ${self:custom.secrets.NODE_ENV}
+    DOMAIN: ${self:custom.secrets.DOMAIN}
+    SERVICE_NAME: ${self:service}
+  iamRoleStatements:
+  - Effect: Allow
+    Action:
+      - rds:*
+    Resource: "arn:aws:rds:*:*:*"
+
+  # iamRoleStatements:
+  #   - Effect: Allow
+  #     Action:
+  #       - dynamodb:DescribeTable
+  #       - dynamodb:Query
+  #       - dynamodb:Scan
+  #       - dynamodb:GetItem
+  #       - dynamodb:PutItem
+  #       - dynamodb:UpdateItem
+  #       - dynamodb:DeleteItem
+  #     Resource: "arn:aws:dynamodb:us-east-1:*:*"
+
+  # To load environment variables externally
+  # rename env.example to env.yml and uncomment
+  # the following line. Also, make sure to not
+  # commit your env.yml.
+  #
+  #environment: ${file(env.yml):${self:provider.stage}}
+
+functions:
+  # ==========================================
+  # CLIENTS API
+  # ==========================================
+  clients_get_all:
+    handler: src/get.all
+    events:
+      - http:
+          path: get-all
+          method: get
+          cors: true
+          #authorizer: aws_iam
+  # clients_get_list_not_deleted:
+  #   handler: src/get.list_not_deleted
+  #   events:
+  #     - http:
+  #         path: get-list-not-deleted
+  #         method: get
+  #         cors: true
+  #         authorizer: aws_iam
+  # clients_get_list_deleted:
+  #   handler: src/get.list_deleted
+  #   events:
+  #     - http:
+  #         path: get-list-deleted
+  #         method: get
+  #         cors: true
+  #         authorizer: aws_iam
+  # clients_get_list:
+  #   handler: src/get.list
+  #   events:
+  #     - http:
+  #         path: get-list
+  #         method: get
+  #         cors: true
+  #         authorizer: aws_iam
+  # clients_get_by_aws_id:
+  #   handler: src/get.by_aws_id
+  #   events:
+  #     - http:
+  #         path: get/aws_cognito_id/{aws_cognito_id}
+  #         method: get
+  #         cors: true
+  #         authorizer: aws_iam
+  # clients_get_by_id:
+  #   handler: src/get.by_id
+  #   events:
+  #     - http:
+  #         path: get/id/{id}
+  #         method: get
+  #         cors: true
+  #         authorizer: aws_iam
+  # clients_update_by_id:
+  #   handler: src/update.by_id
+  #   events:
+  #     - http:
+  #         path: update/id/{id}
+  #         method: put
+  #         cors: true
+  #         authorizer: aws_iam
+  # clients_update_by_aws_id:
+  #   handler: src/update.by_aws_id
+  #   events:
+  #     - http:
+  #         path: update/aws_cognito_id/{aws_cognito_id}
+  #         method: put
+  #         cors: true
+  #         authorizer: aws_iam
+  # clients_create_in_database:
+  #   handler: src/create.in_database
+  #   events:
+  #     - http:
+  #         path: create/in-database
+  #         method: post
+  #         cors: true
+  #         authorizer: aws_iam
+
+
+  # clients_type_get_list_not_deleted:
+  #   handler: src/client_types/get.all
+  #   events:
+  #     - http:
+  #         path: client-types/get-list
+  #         method: get
+  #         cors: true
+  #         authorizer: aws_iam
+
+  # clients_status_get_list:
+  #   handler: src/client_status/get.all
+  #   events:
+  #     - http:
+  #         path: client-status/get
+  #         method: get
+  #         cors: true
+  #         authorizer: aws_iam
+
+  # clients_referral_source_get_list:
+  #   handler: src/client_referral_source/get.all
+  #   events:
+  #     - http:
+  #         path: client-referral-source/get
+  #         method: get
+  #         cors: true
+  #         authorizer: aws_iam

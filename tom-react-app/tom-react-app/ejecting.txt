@@ -1,0 +1,7 @@
+Alternatives to Ejecting
+Ejecting lets you customize anything, but from that point on you have to maintain the configuration and scripts yourself. This can be daunting if you have many similar projects. In such cases instead of ejecting we recommend to fork react-scripts and any other packages you need. This article dives into how to do it in depth. You can find more discussion in this issue.
+
+# Source:
+https://create-react-app.dev/docs/available-scripts#npm-run-eject
+https://auth0.com/blog/how-to-configure-create-react-app/
+https://github.com/facebook/create-react-app/issues/682
