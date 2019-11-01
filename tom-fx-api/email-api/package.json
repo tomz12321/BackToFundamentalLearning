@@ -1,0 +1,19 @@
+{
+  "name": "fww-emailer-api",
+  "version": "0.1.0",
+  "description": "",
+  "main": "fxs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/forexworldwide/fww-emailer-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/forexworldwide/fww-emailer-api#readme",
+  "dependencies": {
+    "moment": "^2.22.2"
+  }
+}
