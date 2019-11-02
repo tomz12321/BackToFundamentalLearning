@@ -1,0 +1,20 @@
+• Relevant Coursework:
+- Data Communications
+- Computer architecture and operating systems
+- Programming subjects in Java
+- Practical Database Concepts in SQL and AWS services
+- Enterprise Java Web Application - EJB and JPA
+
+Demo site
+• Java Doc (Movie Database System): https://tomz12321.github.io/
+• ReactJS (Pokedex): https://pokedex-react-tomz12321-app.herokuapp.com/Search
+
+Portfolio
+• Java Assignment: (Movie Database System) https://github.com/tomz12321/Assignment2_v2
+• EJB Assignment: (Bank Transaction System) https://github.com/tomz12321/fit5042-ctask-tom-ejb
+• Spring Framework: (Guestbook) https://github.com/tomz12321/HelloSpring
+• Shell Script: (Linux) https://github.com/tomz12321/shellscript
+• Java: (User Database system / Simple CRUD) https://github.com/tomz12321/SimpleCRUD
+• AngularJS: (Pokedex) https://github.com/tomz12321/pokedex
+• ReactJS: (Pokedex) https://github.com/tomz12321/Pokedex-react
+• ReactJS: (ReactJS Self-learning note) https://github.com/tomz12321/Pokedex-react/wiki
