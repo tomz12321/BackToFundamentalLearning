@@ -18,3 +18,82 @@ Portfolio
 • AngularJS: (Pokedex) https://github.com/tomz12321/pokedex
 • ReactJS: (Pokedex) https://github.com/tomz12321/Pokedex-react
 • ReactJS: (ReactJS Self-learning note) https://github.com/tomz12321/Pokedex-react/wiki
+
+Text Draft
+
+Jyh-woei (Tom) YANG
+Unit 203, 217 Abeckett St. Mebourne, VIC 3000
+0423551509, tomz12321@gmail.com
+Linkedin https://www.linkedin.com/in/web-developer-jyhwoei-tom-yang/
+
+SKILLS SUMMARY
+
+Testing expertise:
+ • Performed ICT test plan with Wireless protocols (CDMA/LTE) and field trial skills under the oversea environment
+ Programming expertise:
+ • Refactored Pokedex in ReactJS
+ • Programmed Pokedex in AngularJS
+ • Programmed Guestbook using JSP and Spring framework
+ • Programmed Bank Transaction System using EJB and JPA framework
+ • Programmed Movie Database System in Java (and received HD mark in Java assignment)
+ • Finished school project: Alumni system, powered by Discuz! forum software related to PHP
+ • Customised client function objects using Google Maps API
+Portfolio: https://github.com/tomz12321
+Self learning note: https://github.com/tomz12321/Pokedex-react/wiki/11-02-2018-ReactJS-Self-learned
+
+   Languages:
+ • IELTS Academic overall band score of 7.0 out of 9.0; listening 7.0; reading 6.5; speaking 7.5; writing 6.0
+ • Proficiency in spoken and written Chinese (Mandarin)
+ • Completed NAATI training
+ Completion date: 21 April 2018 (Bidirectional Interpreting Mandarin <=> English)
+• Performed selling and interpreting skills in Royal show game stands
+
+WORK & LEADERSHIP EXPERIENCE Field trial engineer – Wireless field trial Group Htc Corp.
+Intern – Software Engineer
+Infinities Software
+• Experience in Linux/Unix Environments (Linux Mint / Red hat / Ubuntu)
+• Programming experience in Java
+
+EDUCATION
+Monash University
+Master of Information Technology
+• Relevant Coursework: Data Communications, Computer architecture and operating systems
+  • Completed long-term business trip experience in Wireless field in United States
+ • Communicated with Verizon and Sprint representatives and worked independently on test projects (Htc M8 and M9)
+ • Operated automatic testing tool in Perl/Python
+ • Provided daily reports of system stress test and user trial test at the final stage of project
+
+National Sun Yat-sen University
+Bachelor of Information Management
+• Relevant Coursework:
+o Computer architecture, 92 out of 100 (HD level)
+o MIS Project, 92 out of 100 (HD level)
+• Leadership: Basketball team of MIS department - Captain
+
+Kaohsiung, Taiwan
+June, 2010
+Taipei, Taiwan/Kansas , United States
+Nov 2011 –Mar 2015
+Kaohsiung, Taiwan
+Oct 2009 – Sep 2011
+Melbourne, Australia
+ Feb 2017 – Now o Programming in Java, Introduction of database, Enterprise Java web application, Software engineering
+SPECIAL EXPERIENCE Working Holiday in Australia Part-time
+Sydney, Australia
+Mar 2015 – Jan 2017
+
+  • Assist Carnival in Adelaide/Sydney/Melbourne/Canberra royal shows
+ • Volunteer in cleaning and social event at Adelaide Central Youth Hostel Association (YHA)
+ • Travel around the world and have been in oversea over 3 years
+
+ Interests:
+ Programming, Traveling, IT meetups
+ Assistant Organizer:
+ Language Exchange in Australian Taiwanese Meetup Group
+
+ 16 Personalities: (Mediator)
+ https://www.16personalities.com/infp-personality
+ 
+REFERENCE
+Mr. Manoj Kathpalia manojkathpalia@gmail.com Relationship: Tutor at Monash University
+Mr. Anton Punith anton.punith@monash.edu Relationship: Team leader at Hackamon activity
